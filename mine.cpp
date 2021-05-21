@@ -19,6 +19,7 @@ int copper0;
 int copper1 =0;
 int iron0;
 int iron1 = 0;
+int mines;
 
 int main() {
 
@@ -47,6 +48,9 @@ int main() {
     file.open ("iron.txt", ios::in);
     file >> iron0;
     file.close();
+    file.open ("mines.txt", ios::in);
+    file >> mines;
+    file.close();
 
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
     for (int k = 1; k < 255; k++) {
@@ -59,6 +63,21 @@ int main() {
 
         while (1 < 2) {
             if (command == "mine") {
+               file.open ("mines.txt", ios::out);
+               mines++;
+               file << mines << endl;
+               file.close();
+               file.open ("mines.txt, ios::in");
+               file >> mines;
+               if (mines % 100 == 0)  {
+                   cout << "you found a chest:\n";
+               }
+               file.close();
+               coal1 = coal1 + rand() % 25 + 1;
+               iron1 = iron1 + rand() % 5 + 1;
+               cout << "+ " << coal1 << " coal\n";
+               cout << "+ " << iron1 << " iron\n" << "\n";
+
                 if (pickaxe == "wood") {
                     SetConsoleTextAttribute(h, k = 2);
                     stone1 = stone1 + rand() % 10 + 1;
