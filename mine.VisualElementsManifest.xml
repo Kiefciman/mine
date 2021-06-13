@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" GeneratedByTileIconifier="true">
+  <VisualElements ShowNameOnSquare150x150Logo="off" Square150x150Logo="VisualElements\MediumIconmine.png" Square70x70Logo="VisualElements\SmallIconmine.png" ForegroundText="light" BackgroundColor="#589F27" TileIconifierColorSelection="Custom" TileIconifierCreatedWithUpgrade="true" />
+</Application>
