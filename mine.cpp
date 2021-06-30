@@ -273,7 +273,7 @@ int main() {
 
             else if (command == "sellall") {
                 SetConsoleTextAttribute(h, k = 12);
-                money1 = money1 + stone0 + 1.5 * coal0 + 5 * fish0;
+                money1 = money1 + stone0 + 1.5 * coal0 + 5 * fish0 + 7 * copper0 + 10 * iron0;
                 file.open ("stone.txt", ios::out);
                 stone0 = 0;
                 file << stone0 << endl;
@@ -318,6 +318,8 @@ int main() {
                 SetConsoleTextAttribute(h, k = 12);
                 cout << "stone = $ 1\n";
                 cout << "coal = $ 1.5\n";
+                cout << "copper = $7\n";
+                cout << "iron = $10\n";
                 cout << "fish = $ 2\n" << "\n";
                 SetConsoleTextAttribute(h, k = 7);
                 cin >> command;
@@ -331,7 +333,10 @@ int main() {
                 cout << "sell+item to sell (eg. sellstone)\n";
                 cout << "sellall\n";
                 cout << "inv\n";
-                cout << "price\n" << "\n";
+                cout << "price\n";
+                cout << "craft\n";
+                cout << "exit / quit\n";
+                cout << endl;
                 SetConsoleTextAttribute(h, k = 7);
                 cin >> command;
             }
@@ -358,7 +363,7 @@ int main() {
                     SetConsoleTextAttribute(h, k =7);
                     cin >> shop;
 
-                    if (shop == "stone") {
+                    if (shop == "stone" || "stone pickaxe") {
                         if (money0 >= 15000 && stone0 >= 1000) {
                             file.open ("pickaxe.txt", ios::out);
                             pickaxe = "stone";
@@ -381,7 +386,7 @@ int main() {
                         }
                     }
 
-                    else if (shop == "copper") {
+                    else if (shop == "copper" || "copper pickaxe") {
                         if (money0 >= 35000 && copper0 >= 7000) {
                             file.open ("pickaxe.txt", ios::out);
                             pickaxe = "copper";
@@ -405,7 +410,7 @@ int main() {
 
                     }
 
-                    else if (shop == "iron") {
+                    else if (shop == "iron" || "iron pickaxe") {
                         if (money0 >= 75000 && iron0 >= 20000) {
                             file.open ("pickaxe.txt", ios::out);
                             pickaxe = "iron";
@@ -457,7 +462,7 @@ int main() {
                     SetConsoleTextAttribute(h, k =7);
                     cin >> shop;
 
-                    if (shop == "copper") {
+                    if (shop == "copper" || "copper pickaxe") {
                         if (money0 >= 35000 && copper0 >= 7000) {
                             file.open ("pickaxe.txt", ios::out);
                             pickaxe = "copper";
@@ -481,7 +486,7 @@ int main() {
 
                     }
 
-                    else if (shop == "iron") {
+                    else if (shop == "iron" || "copper pickaxe") {
                         if (money0 >= 75000 && iron0 >= 20000) {
                             file.open ("pickaxe.txt", ios::out);
                             pickaxe = "iron";
@@ -529,7 +534,7 @@ int main() {
                     SetConsoleTextAttribute(h, k =7);
                     cin >> shop;
 
-                    if (shop == "iron") {
+                    if (shop == "iron" || "iron pickaxe") {
                         if (money0 >= 75000 && iron0 >= 20000) {
                             file.open ("pickaxe.txt", ios::out);
                             pickaxe = "iron";
@@ -565,7 +570,7 @@ int main() {
                 }
             }
 
-            else if (command == "exit") {
+            else if (command == "exit" || "quit") {
                 return 0;
             }
             
